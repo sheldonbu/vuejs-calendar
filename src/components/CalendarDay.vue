@@ -6,16 +6,13 @@
         props: [ 'day' ],
         computed: {
             classObject() {
-                let isToday = this.day.isSame(this.today, 'day');
+                let today = this.day.isSame(this.$moment(), 'day');
                 return {
                     day: true,
-                    today: isToday,
-                    past: this.day.isSameOrBefore(this.today, 'day') && !isToday,
+                    today,
+                    past: this.day.isSameOrBefore(this.$moment(), 'day') && !today,
                 }
             },
-            today() {
-                return this.$moment('2017-2-17', 'YYYY-M-D');
-            }
         }
     }
 </script>
