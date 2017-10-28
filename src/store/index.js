@@ -14,11 +14,7 @@ export default new Vuex.Store({
         eventFormPosX: 0,
         eventFormPosY: 0,
         eventFormActive: false,
-        events: [
-            { description: 'random event 1', date: moment('2017-10-02', 'YYYY-MM-DD') },
-            { description: 'random event 2', date: moment('2017-10-22', 'YYYY-MM-DD') },
-            { description: 'random event 3', date: moment('2017-11-22', 'YYYY-MM-DD') },
-        ],
+        events: [],
         eventFormDate: moment(),
     },
     mutations: {
@@ -53,9 +49,7 @@ export default new Vuex.Store({
                 Axios.post('/add_event', obj).then(response => {
                     if (response.status === 200) {
                         context.commit('addEvent', obj);
-                        setTimeout(function() {
-                            resolve();
-                        }, 2000);
+                        resolve();
                     } else {
                         reject();
                     }
