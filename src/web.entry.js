@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import './style.scss';
+import store from './store';
 
 import moment from 'moment-timezone';
 moment.tz.setDefault('UTC');
@@ -14,5 +15,6 @@ new Vue({
     },
     components: {
         App,
-    }
+    },
+    store
 });
