@@ -24,7 +24,6 @@
         </div>
         <event-form></event-form>
     </div>
-    
 </template>
 <script>
     import CalendarDay from './CalendarDay.vue';
